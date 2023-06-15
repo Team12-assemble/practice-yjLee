@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 200px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        /* border: 1px solid black; */
+        width: 320px;
+        height: 400px;
+        margin: 24px 8px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+      }
+      .box img {
+        width: 320px;
+        height: 150px;
+        border-radius: 8px 8px 0 0;
+        filter: brightness(0.75);
+      }
+      .box img:hover {
+        transform: scale(1.1);
+        transition-duration: 0.3s;
+        filter: brightness(1);
+      }
+
+      .box span.ref {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 2;
+
+        padding: 2px 8px;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgb(81, 0, 81);
+        background-color: rgb(245, 216, 253);
+        border-radius: 10px;
+      }
+      .info {
+        padding: 16px;
+      }
+      .info_possible {
+        font-size: 12px;
+        color: rgb(22 163 74);
+        font-weight: bold;
+        background-color: rgb(214, 248, 227);
+        padding: 2px 8px;
+        border-radius: 8px;
+      }
+      .info h3 {
+        font-size: 16px;
+      }
+      .info p.description,
+      .info p {
+        font-size: 14px;
+      }
+      .info p.description {
+        color: #a3a2a2;
+      }
+      .info .tag {
+        display: flex;
+        justify-content: space-between;
+      }
+      .info button {
+        width: 288px;
+        height: 36px;
+        color: #fff;
+        background-color: rgb(58, 146, 253);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>교육 과정</h2>
+    <div class="container">
+      <div class="box">
+        <img src="./img/box_img.jpeg" alt="이미지" />
+        <span class="ref">유데미x웅진씽크빅x스펙</span>
+        <div class="info">
+          <span class="info_possible">신청가능</span>
+          <h3>10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h3>
+          <p class="description">
+            [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 :
+            프론트엔드(리액트) 과정
+          </p>
+          <div class="tag">
+            <p>무료교육과정</p>
+            <p>기수 : 1기 🚀</p>
+          </div>
+          <button>더 알아보기</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./img/box_img.jpeg" alt="이미지" />
+        <div class="info">
+          <span class="info_possible">신청가능</span>
+          <h3>10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h3>
+          <p class="description">
+            [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 :
+            프론트엔드(리액트) 과정
+          </p>
+          <div class="tag">
+            <p>무료교육과정</p>
+            <p>기수 : 1기 🚀</p>
+          </div>
+          <button>더 알아보기</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./img/box_img.jpeg" alt="이미지" />
+        <span class="info_possible">신청가능</span>
+        <div class="info">
+          <h3>10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h3>
+          <p class="description">
+            [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 :
+            프론트엔드(리액트) 과정
+          </p>
+          <div class="tag">
+            <p>무료교육과정</p>
+            <p>기수 : 1기 🚀</p>
+          </div>
+          <button>더 알아보기</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./img/box_img.jpeg" alt="이미지" />
+        <div class="info">
+          <span class="info_possible">신청가능</span>
+          <h3>10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h3>
+          <p class="description">
+            [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 :
+            프론트엔드(리액트) 과정
+          </p>
+          <div class="tag">
+            <p>무료교육과정</p>
+            <p>기수 : 1기 🚀</p>
+          </div>
+          <button>더 알아보기</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./img/box_img.jpeg" alt="이미지" />
+        <div class="info">
+          <span class="info_possible">신청가능</span>
+          <h3>10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h3>
+          <p class="description">
+            [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 :
+            프론트엔드(리액트) 과정
+          </p>
+          <div class="tag">
+            <p>무료교육과정</p>
+            <p>기수 : 1기 🚀</p>
+          </div>
+          <button>더 알아보기</button>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./img/box_img.jpeg" alt="이미지" />
+        <div class="info">
+          <span class="info_possible">신청가능</span>
+          <h3>10주 완성! 프로젝트 캠프 : 프론트엔드(리액트)</h3>
+          <p class="description">
+            [유데미x웅진씽크빅x스나이퍼팩토리] 10주 완성! 프로젝트 캠프 :
+            프론트엔드(리액트) 과정
+          </p>
+          <div class="tag">
+            <p>무료교육과정</p>
+            <p>기수 : 1기 🚀</p>
+          </div>
+          <button>더 알아보기</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
