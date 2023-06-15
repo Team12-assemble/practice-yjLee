@@ -21,7 +21,7 @@
         </section>
       </nav>
       <section class="banner">
-        <img src="./img/banner-img.png" alt="banner-img" />
+        <img id="banner-img" src="./img/banner-img.png" alt="banner-img" />
         <h1>
           내 집 보증금, <br />
           경매로 날아가면 어떻게 하지?
@@ -35,9 +35,9 @@
     <!-- main -->
     <main>
       <section id="main-section1">
-        <h2>세이프홈즈, 전/월세 보증금 지킴이 서비스입니다.</h2>
+        <h2><span>세이프홈즈, </span>전/월세 보증금 지킴이 서비스입니다.</h2>
         <div class="group">
-          <article class="detail deatil1">
+          <article class="detail">
             <img src="./img/card1_1.png" alt="section1-detail1" />
             <h3>등기부등본 등을 분석한<br />보증금 지킴이 리포트</h3>
             <p>
@@ -45,7 +45,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </article>
-          <article class="detail deatil2">
+          <article class="detail">
             <img src="./img/card1_2.png" alt="section1-detail2" />
             <h3>보증금 보호를 위한<br />Check-List</h3>
             <p>
@@ -53,7 +53,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </article>
-          <article class="detail deatil3">
+          <article class="detail">
             <img src="./img/card1_3.png" alt="section1-detail3" />
             <h3>등기부등본 변동에<br />따른 실시간 알림 서비스</h3>
             <p>
@@ -62,12 +62,15 @@
             </p>
           </article>
         </div>
+        <button class="start-btn">
+          지금 바로 사용하기 <img src="./img/arrow.png" alt="right" />
+        </button>
       </section>
 
       <section id="main-section2">
         <h2>부동산을 찾았지만 망설이고 계시나요?</h2>
         <div class="group">
-          <article class="detail deatil1">
+          <article class="detail">
             <img src="./img/card2_1.png" alt="section2-detail1" />
             <h3>부동산 중개 업자는 항상 괜찮다고<br />한다. 과연 그럴까?</h3>
             <p>
@@ -75,7 +78,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </article>
-          <article class="detail deatil2">
+          <article class="detail">
             <img src="./img/card2_2.png" alt="section2-detail2" />
             <h3>절차가 이것저것 너무 많은데 빠뜨린 절차가 있지 않을까?</h3>
             <p>
@@ -83,7 +86,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </article>
-          <article class="detail deatil3">
+          <article class="detail">
             <img src="./img/card2_3.png" alt="section2-detail3" />
             <h3>평생 힘들게 모은 보증금을 나중에 돌려 받지 못 하면 ..</h3>
             <p>
@@ -97,7 +100,7 @@
       <section id="main-section3">
         <h2><span>세이프홈즈,</span> 어떻게 내 보증금을 지킬 수 있을까요?</h2>
         <ul class="card-group-list">
-          <li class="card card1">
+          <li class="card">
             <span class="number">#1</span>
             <h4 class="title">계약 전 주소 검색</h4>
             <p>
@@ -105,7 +108,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </li>
-          <li class="card card2">
+          <li class="card">
             <span class="number">#2</span>
             <h4 class="title">보증금 지킴이 리포트 확인</h4>
             <p>
@@ -113,7 +116,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </li>
-          <li class="card card3">
+          <li class="card">
             <span class="number">#3</span>
             <h4 class="title">체크리스트를 따라 계약 진행</h4>
             <p>
@@ -121,7 +124,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </li>
-          <li class="card card4">
+          <li class="card">
             <span class="number">#4</span>
             <h4 class="title">실시간 등기 변동 알림</h4>
             <p>
@@ -129,7 +132,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </li>
-          <li class="card card5">
+          <li class="card">
             <span class="number">#5</span>
             <h4 class="title">계약 기간 안심하고 살기</h4>
             <p>
@@ -139,7 +142,7 @@
           </li>
         </ul>
         <button class="more-btn">
-          조금 더 알아보기<img src="./img/arrow.png" alt="arrow" />
+          조금 더 알아보기 <img src="./img/arrow.png" alt="arrow" />
         </button>
       </section>
 
@@ -231,15 +234,59 @@
           <article class="review-card">
             <div class="review-author">
               <img src="./img/author.png" alt="author" />
-              <p class="author-name">홍길동님</p>
-              <p class="author-desc">전/월세 보증금 지킴이 리포트</p>
+              <div class="author">
+                <p class="author-name">홍길동님</p>
+                <p class="author-desc">전/월세 보증금 지킴이 리포트</p>
+              </div>
             </div>
             <p class="detail">
-              해당 플랜은 여러분을 위해 리포트를 제공합니다. 실제로 이 리포트는
-              언제 어디서든지 사용할 수 있고 그렇습니다.
+              공인중개사가 계약을 너무 서두르는 느낌이 들어 불안했는데,
+              세이프홈즈를 통해서 리포트를 받아보니 아니나 다를까 위험요소가
+              너무 큰 매물이었습니다. 근저당이 너무 높게 잡혀있었고, 보증보험
+              적합 대상도 아니라 경매로 넘어가게 되면 보증금을 돌려받기 힘들 것
+              같아 해당 매물 계약을 포기하고, 더 안전한 매물을 찾아서 계약할 수
+              있었습니다.
+            </p>
+          </article>
+          <article class="review-card">
+            <div class="review-author">
+              <img src="./img/author.png" alt="author" />
+              <div class="author">
+                <p class="author-name">홍길동님</p>
+                <p class="author-desc">전/월세 보증금 지킴이 리포트</p>
+              </div>
+            </div>
+            <p class="detail">
+              공인중개사가 계약을 너무 서두르는 느낌이 들어 불안했는데,
+              세이프홈즈를 통해서 리포트를 받아보니 아니나 다를까 위험요소가
+              너무 큰 매물이었습니다. 근저당이 너무 높게 잡혀있었고, 보증보험
+              적합 대상도 아니라 경매로 넘어가게 되면 보증금을 돌려받기 힘들 것
+              같아 해당 매물 계약을 포기하고, 더 안전한 매물을 찾아서 계약할 수
+              있었습니다.
+            </p>
+          </article>
+          <article class="review-card">
+            <div class="review-author">
+              <img src="./img/author.png" alt="author" />
+              <div class="author">
+                <p class="author-name">홍길동님</p>
+                <p class="author-desc">전/월세 보증금 지킴이 리포트</p>
+              </div>
+            </div>
+            <p class="detail">
+              공인중개사가 계약을 너무 서두르는 느낌이 들어 불안했는데,
+              세이프홈즈를 통해서 리포트를 받아보니 아니나 다를까 위험요소가
+              너무 큰 매물이었습니다. 근저당이 너무 높게 잡혀있었고, 보증보험
+              적합 대상도 아니라 경매로 넘어가게 되면 보증금을 돌려받기 힘들 것
+              같아 해당 매물 계약을 포기하고, 더 안전한 매물을 찾아서 계약할 수
+              있었습니다.
             </p>
           </article>
         </section>
+        <button class="review-btn">
+          후기 진위여부 파악하러 가기
+          <img src="./img/arrow.png" alt="right" />
+        </button>
       </section>
 
       <section id="last-banner">
@@ -250,7 +297,7 @@
 
     <!-- footer -->
     <footer>
-      <p>(주)세이프홈즈</p>
+      <span>(주)세이프홈즈</span>
       <p>
         사업자 등록 번호 : 250-26-01109 | 대표 : 정동훈<br />
         경기도 성남시 수정구 대왕판교로 815 기업지원허브 혁신기술존 260-3호<br />
