@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - 이미지 랜덤 변환</title>
+  </head>
+  <body>
+    <div class="imgBox">
+      <img id="img" src="./img/image1.jpg" style="width: 30vw" />
+    </div>
+  </body>
+  <script>
+    const images = [
+      "./img/image1.jpg",
+      "./img/image2.jpg",
+      "./img/image3.jpg",
+      "./img/image4.jpg",
+    ];
+
+    const imgBox = document.getElementsByClassName("imgBox");
+    const imgSrc = document.getElementById("img");
+
+    function randomImg() {
+      const random = Math.floor(Math.random() * images.length);
+      console.log(random);
+      // document.getElementById("img").setAttribute("src", images[random]);
+      document.getElementById("img").src = images[random];
+    }
+    // imgBox[0].addEventListener("click", randomImg);
+    imgSrc.addEventListener("click", randomImg);
+  </script>
+</html>

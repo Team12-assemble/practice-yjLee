@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 계산기</title>
+    <style>
+      .calculator {
+        display: flex;
+      }
+      .input_box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 5px;
+        margin-right: 5px;
+      }
+      .operator_box button {
+        display: block;
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>계산기</h1>
+    <div class="calculator">
+      <div class="input_box">
+        <button class="number" type="text" value="1">1</button>
+        <button class="number" type="text" value="2">2</button>
+        <button class="number" type="text" value="3">3</button>
+        <button class="number" type="text" value="4">4</button>
+        <button class="number" type="text" value="5">5</button>
+        <button class="number" type="text" value="6">6</button>
+        <button class="number" type="text" value="7">7</button>
+        <button class="number" type="text" value="8">8</button>
+        <button class="number" type="text" value="9">9</button>
+        <button class="number" type="text" value="0">0</button>
+      </div>
+      <div class="operator_box">
+        <button class="operator_btn" value="+">+</button>
+        <button class="operator_btn" value="-">-</button>
+        <button class="operator_btn" value="*">*</button>
+        <button class="operator_btn" value="/">/</button>
+        <button id="result_btn">=</button>
+      </div>
+    </div>
+    <p id="current"></p>
+  </body>
+  <script>
+    const number_btn = document.getElementsByClassName("number");
+    const operator_btn = document.getElementsByClassName("operator_btn");
+    const result_btn = document.getElementById("result_btn");
+    const current = document.getElementById("current"); //계산 과정, 결과값 출력
+
+    let val1;
+    let val2;
+    let operator = "";
+    let input_num = ""; //클릭한 number 저장
+
+    //number_btn 이벤트리스너
+    for (let i = 0; i < number_btn.length; i++) {
+      number_btn[i].addEventListener("click", (e) => {
+        console.log(e.target.value);
+        input_num += Number(e.target.value); //input_num에 숫자값 저장
+        current.innerText = input_num;
+      });
+    }
+
+    //operator_btn 이벤트리스너
+    for (let i = 0; i < operator_btn.length; i++) {
+      operator_btn[i].addEventListener("click", (e) => {
+        //input_num 존재하면 operator 지정
+        if (input_num) {
+          val1 = Number(input_num);
+          operator = e.target.value;
+          current.innerText += operator;
+          input_num = ""; //input_num 초기화
+        } else return;
+      });
+    }
+
+    //'=' 연산결과 클릭시 사칙연산 수행
+    result_btn.addEventListener("click", () => {
+      console.log(val1, operator);
+      if (val1 && operator) {
+        console.log("cl");
+        val2 = Number(input_num);
+        switch (operator) {
+          case "+":
+            current.innerText = `${val1} ${operator} ${val2} = ${val1 + val2}`;
+            break;
+          case "-":
+            current.innerText = `${val1} ${operator} ${val2} = ${val1 - val2}`;
+            break;
+          case "*":
+            current.innerText = `${val1} ${operator} ${val2} = ${val1 * val2}`;
+            break;
+          case "/":
+            current.innerText = `${val1} ${operator} ${val2} = ${val1 / val2}`;
+            break;
+            deafult: break;
+            val1 = "";
+            input_num = "";
+            val2 = "";
+            operator = "";
+        }
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이더</title>
+    <style>
+      .container {
+        width: 600px;
+      }
+      #slide {
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+      }
+      .images {
+        display: flex;
+      }
+      img {
+        width: 600px;
+        /* height: 400px; */
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="slide">
+        <div class="images">
+          <img class="image" src="./img/image1.jpg" />
+          <img class="image" src="./img/image2.jpg" />
+          <img class="image" src="./img/image3.jpg" />
+          <img class="image" src="./img/image4.jpg" />
+        </div>
+      </div>
+      <button id="prevBtn" type="text">이전</button>
+      <button id="nextBtn" type="text">다음</button>
+    </div>
+  </body>
+  <script>
+    const images = document.querySelector(".images");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const length = document.getElementsByClassName("image").length;
+
+    let curPos = 0;
+    let position = 0;
+    let imgWidth = 600;
+
+    function prev() {
+      //앞으로 이동
+      if (curPos > 0) {
+        if (nextBtn.getAttribute("disabled") === "true") {
+          nextBtn.removeAttribute("disabled");
+        }
+        position += imgWidth;
+        images.style.transform = `translateX(${position}px)`;
+        curPos = curPos - 1;
+      }
+      if (curPos === 0) {
+        prevBtn.setAttribute("disabled", "true");
+      }
+      console.log(curPos);
+    }
+    function next() {
+      if (curPos < length - 1) {
+        if (prevBtn.getAttribute("disabled") === "true") {
+          prevBtn.removeAttribute("disabled");
+        }
+        position -= imgWidth;
+        console.log(images);
+        images.style.transform = `translate(${position}px)`;
+        curPos = curPos + 1;
+      }
+      if (curPos === length - 1) {
+        nextBtn.setAttribute("disabled", "true");
+      }
+      console.log(curPos);
+    }
+
+    function init() {
+      prevBtn.setAttribute("disabled", "true");
+      prevBtn.addEventListener("click", prev);
+      nextBtn.addEventListener("click", next);
+    }
+    init();
+  </script>
+</html>

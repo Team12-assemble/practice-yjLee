@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>현재 시간</title>
+  </head>
+  <body>
+    <h1>현재시간</h1>
+    <h2 id="current_time"></h2>
+  </body>
+  <script>
+    const clock = document.getElementById("current_time");
+
+    function display(time) {
+      return time < 10 ? `0${time}` : time;
+    }
+    function getTime() {
+      const time = new Date();
+      const hour = time.getHours();
+      const minutes = time.getMinutes();
+      const seconds = time.getSeconds();
+      clock.innerHTML = `${display(hour)}:${display(minutes)}:${display(
+        seconds
+      )}`;
+    }
+
+    //1초마다 불러오기
+    function init() {
+      setInterval(getTime, 1000);
+    }
+    init();
+  </script>
+</html>
