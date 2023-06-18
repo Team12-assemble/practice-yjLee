@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safe Homes - Landing Page</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <!-- header -->
@@ -27,7 +28,7 @@
           경매로 날아가면 어떻게 하지?
         </h1>
         <button>
-          지급 걱정 해결하기<img src="./img/arrow.png" alt="arrow" />
+          지금 걱정 해결하기<img src="./img/arrow.png" alt="arrow" />
         </button>
       </section>
     </header>
@@ -140,6 +141,7 @@
               계약전 보증금 지킴이 리포트 제공
             </p>
           </li>
+          <li class="hidden"></li>
         </ul>
         <button class="more-btn">
           조금 더 알아보기 <img src="./img/arrow.png" alt="arrow" />
@@ -230,7 +232,7 @@
 
       <section id="main-section6">
         <h2><span>세이프홈즈,</span> 없었으면 큰일 날 뻔했어요!</h2>
-        <section class="review-cards">
+        <section class="review-cards slide">
           <article class="review-card">
             <div class="review-author">
               <img src="./img/author.png" alt="author" />
@@ -270,7 +272,7 @@
               <img src="./img/author.png" alt="author" />
               <div class="author">
                 <p class="author-name">홍길동님</p>
-                <p class="author-desc">전/월세 보증금 지킴이 리포트</p>
+                <p class="author-desc">등기부 등본 변동 알림 서비스</p>
               </div>
             </div>
             <p class="detail">
@@ -283,6 +285,8 @@
             </p>
           </article>
         </section>
+        <button id="prevBtn" type="text"><</button>
+        <button id="nextBtn" type="text">></button>
         <button class="review-btn">
           후기 진위여부 파악하러 가기
           <img src="./img/arrow.png" alt="right" />

@@ -135,12 +135,37 @@ section.banner button {
   font-weight: bold;
 }
 
+#main-section6 {
+  position: relative;
+}
+
+#main-section6 button#prevBtn,
+#main-section6 button#nextBtn {
+  padding: 16px;
+  background-color: #fff;
+  color: #0e7159;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+}
+
+#main-section6 button#prevBtn {
+  top: 50%;
+  left: 0;
+}
+#main-section6 button#nextBtn {
+  top: 50%;
+  right: 0;
+}
+
 #main-section3 ul.card-group-list {
   list-style-type: none;
   padding: 0;
-  margin: 0 150px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   flex-wrap: wrap;
 }
 #main-section3 ul.card-group-list li {
