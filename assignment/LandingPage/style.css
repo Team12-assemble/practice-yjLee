@@ -327,6 +327,50 @@ footer p {
 }
 
 @media (max-width: 768px) {
-}
-@media (max-width: 480px) {
+  body {
+    margin: 0 auto;
+    padding: 0;
+  }
+  nav {
+    padding: 0 48px;
+  }
+  nav .nav-ask-btn {
+    display: none;
+  }
+  section.banner {
+    padding: 100px 170px;
+  }
+  #main-section1,
+  #main-section2,
+  #main-section4,
+  footer {
+    width: 634px;
+    margin: 50px auto;
+  }
+
+  #main-section5 {
+    width: 720px;
+    margin: 0 auto;
+  }
+
+  #main-section1 .group,
+  #main-section2 .group {
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  #main-section4 .imgs-info,
+  #main-section5 .price-cards {
+    margin: 0;
+    margin-top: 100px;
+  }
+
+  #main-section5 .price-cards {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  #main-section5 .price-card {
+    margin: 0 8px;
+  }
 }
