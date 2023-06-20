@@ -13,4 +13,5 @@ const getCurrentTime = () => {
     display(date.getSeconds());
 };
 
+getCurrentTime();
 setInterval(getCurrentTime, 1000);
