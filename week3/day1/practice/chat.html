@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실시간 채팅</title>
+    <style>
+      body {
+        margin: 0;
+        /* padding: 16px; */
+      }
+      .title {
+        text-align: center;
+        background-color: rgb(88 181 168);
+        font-size: 36px;
+        padding: 50px;
+        color: #fff;
+      }
+      .chat {
+        margin: 16px;
+      }
+      #user {
+        margin-left: 16px;
+      }
+      p {
+        margin: 0;
+      }
+      span {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">실시간 채팅</div>
+    <div class="chat"></div>
+    <input id="user" type="text" placeholder="사용자명" />
+    <input id="msg" type="text" placeholder="메세지를 입력하세요." />
+    <input id="submit" type="button" value="전송" />
+    <script>
+      const user = document.getElementById("user");
+      const msg = document.getElementById("msg");
+      const chatBox = document.querySelector(".chat");
+
+      const submit = document.getElementById("submit");
+
+      //localStorage getItem
+      const data = JSON.parse(localStorage.getItem("chat"));
+      console.log(data);
+      if (data) {
+        let str = "";
+        data.forEach((chat) => {
+          str += `<span>${chat.username}</span>: ${chat.message}<br>`;
+        });
+        const newChat = document.createElement("p");
+        newChat.innerHTML = str;
+        chatBox.appendChild(newChat);
+      }
+
+      submit.addEventListener("click", () => {
+        const username = user.value;
+        const message = msg.value;
+        // console.log(username, message);
+        sendMessage(username, message);
+        user.value = "";
+        msg.value = "";
+      });
+
+      const sendMessage = (username, message) => {
+        localStorage.setItem(
+          "chat",
+          data
+            ? JSON.stringify([...data, { username, message }])
+            : JSON.stringify([{ username, message }])
+        );
+
+        const newChat = document.createElement("p");
+        //span 태그를 같이 넣으려면 textContent가 아닌 innerHTML로 넣어줘야함
+        newChat.innerHTML = `<span>${username}</span>: ${message}`;
+        chatBox.appendChild(newChat);
+      };
+    </script>
+  </body>
+</html>

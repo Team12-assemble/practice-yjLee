@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item-box {
+        display: flex;
+      }
+      .item {
+        padding: 16px;
+        margin: 16px;
+        width: 500px;
+        height: 200px;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 8px 16px;
+        color: #fff;
+        background-color: rgb(1, 147, 86);
+        border: none;
+        cursor: pointer;
+      }
+      .cart {
+        margin: 16px;
+      }
+      li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="item-box">
+      <div class="item">
+        <h2 id="name">사과</h2>
+        <p id="price">1000원</p>
+        <button id="addCart">장바구니에 추가</button>
+        <!-- 아래와 같이 데이터 담아서 불러오기도 함 -->
+        <!-- <button id="addCart" data-name="사과" data-price="1000">장바구니에 추가</button> -->
+      </div>
+      <div class="item">
+        <h2 id="name">바나나</h2>
+        <p id="price">1500원</p>
+        <button id="addCart">장바구니에 추가</button>
+      </div>
+    </section>
+    <section class="cart">
+      <h1>장바구니</h1>
+    </section>
+
+    <script>
+      const cartBtn = document.querySelectorAll("#addCart");
+      cartBtn.forEach((btn) => {
+        //클릭할 요소 지정해줘야 함
+        btn.addEventListener("click", () => {
+          console.log(btn);
+          const itemName = btn
+            .closest(".item")
+            .querySelector("#name").textContent;
+          //앞의앞 형제요소 접근 : previousElementSibling 이용
+          //   const itemName1 =
+          //     btn.previousElementSibling.previousElementSibling.textContent;
+          //   console.log(itemName1);
+
+          const itemPrice = btn
+            .closest(".item")
+            .querySelector("#price").textContent;
+          console.log(itemName, itemPrice);
+          //closest : selectors에 일치하는 가장 가까운 조상 Element 또는 자기 자신 반환
+
+          const cart = document.querySelector(".cart");
+          const newElement = document.createElement("li");
+          newElement.textContent = `${itemName}-${itemPrice}`;
+          //파라미터 요소안에 넣기
+          cart.appendChild(newElement);
+        });
+      });
+    </script>
+  </body>
+</html>
