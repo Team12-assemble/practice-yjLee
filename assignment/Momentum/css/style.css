@@ -9,6 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  text-shadow: 2px 2px 2px #c1c0c0a6;
 }
 img.bg-img {
   width: 100%;
@@ -29,6 +30,7 @@ input#input-name {
 }
 input#input-name::placeholder {
   color: #fff;
+  text-shadow: 2px 2px 2px #c1c0c0a6;
 }
 
 h1#clock {
