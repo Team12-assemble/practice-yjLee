@@ -9,6 +9,7 @@
   </head>
   <body>
     <h1 id="clock" class="hidden"></h1>
+
     <form id="login-form" class="hidden">
       <input
         id="input-name"
@@ -17,11 +18,29 @@
         placeholder="What's your name?"
         autocomplete="off"
       />
-      <input id="login-btn" type="submit" value="LogIn" class="hidden" />
+      <!-- <input id="login-btn" type="submit" value="LogIn" class="hidden" /> -->
     </form>
     <h1 id="greeting" class="hidden"></h1>
+
+    <form id="todo-form">
+      <input
+        id="todo-input"
+        type="text"
+        placeholder="What's your todo-list today?"
+        required
+      />
+    </form>
+    <ul id="todo-list"></ul>
+
+    <div id="weatherAPI">
+      <span></span>
+      <span></span>
+    </div>
+
     <script src="js/clock.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
