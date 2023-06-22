@@ -21,14 +21,21 @@ img.bg-img {
   opacity: 90%;
 }
 
-input#input-name {
+input#input-name,
+input#todo-input {
   font-size: 48px;
   background: transparent;
   border: none;
   border-bottom: 1px solid #fff;
   color: #fff;
 }
-input#input-name::placeholder {
+
+input#todo-input {
+  font-size: 36px;
+  width: 36vw;
+}
+input#input-name::placeholder,
+input#todo-input::placeholder {
   color: #fff;
   text-shadow: 2px 2px 2px #c1c0c0a6;
 }
@@ -42,4 +49,44 @@ h1#greeting {
 
 .hidden {
   display: none;
+}
+
+ul#todo-list {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  font-size: 18px;
+  list-style: none;
+  margin: 20px;
+  padding: 16px;
+  overflow: scroll;
+  background-color: #ffffff8c;
+  text-align: center;
+}
+
+ul#todo-list li {
+  color: #1c1c1c;
+  padding: 8px;
+}
+
+button#delete-btn {
+  margin-left: 8px;
+  padding: 3px 5px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #cbffee;
+  color: #363636;
+}
+
+#weatherAPI {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
