@@ -1,0 +1,11 @@
+.container {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+.imgBox {
+  display: flex;
+}
+.imgBox img {
+  width: 100%;
+}
