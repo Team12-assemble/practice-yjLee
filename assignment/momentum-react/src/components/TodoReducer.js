@@ -24,7 +24,7 @@ const reducer = (state, action) => {
   }
 };
 
-const TodoReducer = () => {
+const TodoReducer = ({ username }) => {
   const [todos, dispatch] = useReducer(reducer, initialState);
   const [input, setInput] = useState("");
 
@@ -44,7 +44,7 @@ const TodoReducer = () => {
   };
 
   return (
-    <>
+    <div className={!username ? "hidden" : "todo-list"}>
       <input
         id="todo"
         type="text"
@@ -53,13 +53,13 @@ const TodoReducer = () => {
         placeholder="할일을 입력하세요."
         onKeyDown={(e) => activeEnter(e)}
       />
-      <button onClick={addTodo}>추가</button>
+      <button onClick={addTodo}>↵</button>
       <ul>
         {todos.map((todo) => (
-          <TodoItem item={todo} dispatch={dispatch} />
+          <TodoItem key={todo.id} item={todo} dispatch={dispatch} />
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

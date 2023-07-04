@@ -16,6 +16,7 @@ const NameInput = ({ username, setName }) => {
         className={username ? "hidden" : "nameForm"}
       >
         <input
+          id="name"
           placeholder="What's your name?"
           type="text"
           name="name"
